@@ -1,52 +1,41 @@
-package sample;
-
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import com.gargoylesoftware.htmlunit.html.HtmlTable;
 import java.util.Scanner;
 
-public class Sample {
+public class Jnturesults {
 
     public static void main(String[] args) {
         try {
             WebClient webClient = new WebClient();
             webClient.getOptions().setCssEnabled(false);
             webClient.getOptions().setJavaScriptEnabled(true);
-            // HtmlPage currentPage = webClient.getPage("http://jntukresults.edu.in/view-results-56735911.html");
-            //Single Supply OOPS C++
-            //HtmlPage currentPage = webClient.getPage("http://jntukresults.edu.in/view-results-56735817.html");
-            // HtmlPage currentPage = webClient.getPage("http://jntukresults.edu.in/view-results-56735870.html");
-            // HtmlPage currentPage = webClient.getPage("http://jntukresults.edu.in/view-results-56735798.html");
-            //Pharmacy
-            // HtmlPage currentPage = webClient.getPage("http://jntukresults.edu.in/view-results-56735879.html");
-            //Juniors R16 Regulation
-            HtmlPage currentPage = webClient.getPage("http://jntukresults.edu.in/view-results-56735914.html");
-            HtmlInput intputBox = currentPage.getHtmlElementById("ht");
-            System.out.println("Enter HallTicket Number : ");
-            Scanner sc = new Scanner(System.in);
-            String htno = sc.next();
-            intputBox.setValueAttribute(htno);
-            HtmlButtonInput abc = (HtmlButtonInput) currentPage.getElementsByTagName("input").get(1);
-            HtmlPage page = (HtmlPage) abc.click();
-            webClient.waitForBackgroundJavaScript(1400);
-            //System.out.print(page.asXml());
-            HtmlTable table = null;
-            if (page.getElementsByTagName("table").getLength() <2) {
-                System.out.print("Invalid HallTicket number");
-            } else {
-                //table = (HtmlTable)page.getElementsByTagName("table").get(1);
-                table = (HtmlTable)page.getElementsByTagName("table").get(1);
-                int i = 0;
-                int subjects = -2;
-                int regulation = 0;
-                for (final HtmlTableRow row : table.getRows()) {
-                    subjects++;
-                    for (final HtmlTableCell cell : row.getCells()) {
-                        if (subjects == -1) {
-                            regulation++;
-                        }
-                    }
-                }
+                       HtmlPage currentPage = webClient.getPage("http://jntukresults.edu.in/view-results-56735914.html");
+           ########################################################################
+	
+	
+	
+            Logic is Hidden for Security purposes
+
+
+
+
+            Logic is Hidden for Security purposes
+
+
+
+
+            Logic is Hidden for Security purposes
+
+
+
+
+            Logic is Hidden for Security purposes
+
+
+
+
+        ##############################################################################
                 System.out.println("Number of Columns :" + regulation);
                 String[] data = null;
                 if (regulation == 5) {
@@ -89,50 +78,63 @@ public class Sample {
                             totalcredits += credits[index];
                             String sub = (subjName[index].substring(subjName[index].length() - 3, subjName[index].length())).toLowerCase();
                             // System.out.println(sub);
-                            if (sub.equals("lab")) {
-                                if (total[index] >= 67) {
-                                    grades[index] = 10;
-                                } else if (total[index] >= 60 && total[index] < 67) {
-                                    grades[index] = 9;
-                                } else if (total[index] >= 52 && total[index] < 60) {
-                                    grades[index] = 8;
-                                } else if (total[index] >= 45 && total[index] < 52) {
-                                    grades[index] = 7;
-                                } else if (total[index] >= 37 && total[index] < 45) {
-                                    grades[index] = 6;
-                                } else if (total[index] >= 30 && total[index] < 37) {
-                                    grades[index] = 5;
-                                } else if (total[index] < 30) {
-                                    grades[index] = 0;
-                                }
-                                labs++;
-                            } else {
+                            ########################################################################
 
-                                if (total[index] >= 90) {
-                                    grades[index] = 10;
-                                } else if (total[index] >= 80 && total[index] < 90) {
-                                    grades[index] = 9;
-                                } else if (total[index] >= 70 && total[index] < 80) {
-                                    grades[index] = 8;
-                                } else if (total[index] >= 60 && total[index] < 70) {
-                                    grades[index] = 7;
-                                } else if (total[index] >= 50 && total[index] < 60) {
-                                    grades[index] = 6;
-                                } else if (total[index] >= 40 && total[index] < 50) {
-                                    grades[index] = 5;
-                                } else if (total[index] < 40) {
-                                    grades[index] = 0;
-                                }
-                                theory++;
-                            }
-                            index++;
-                        }
+
+
+                            Logic is Hidden for Security purposes
+
+
+
+
+                            Logic is Hidden for Security purposes
+
+
+
+
+                            Logic is Hidden for Security purposes
+
+
+
+
+                            Logic is Hidden for Security purposes
+
+
+
+
+                        ##############################################################################
+        
                     }
                     int creditPoint = 0;
                     for (int m = 0; m < index; m++) {
                         System.out.println(subjCode[m] + "\t" + subjName[m] + "\t" + internals[m] + "\t" + externals[m] + "\t" + total[m] + "\t" + credits[m] + "\t" + grades[m]);
                         creditPoint += credits[m] * grades[m];
                     }
+                         ########################################################################
+	
+	
+
+                            Logic is Hidden for Security purposes
+
+
+
+
+                            Logic is Hidden for Security purposes
+
+
+
+
+                            Logic is Hidden for Security purposes
+
+
+
+
+                            Logic is Hidden for Security purposes
+
+
+
+
+                        ##############################################################################
                     float max = labs * 75 + theory * 100;
                     System.out.println("Credits Total: " + totalcredits);
                     System.out.println("Total Marks : " + totalmarks);
